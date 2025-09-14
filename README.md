@@ -31,7 +31,8 @@ It features a clean and responsive UI, interactive map, and secure backend API h
    ```bash
    git clone https://github.com/Vishesh-Dhiman/Weather-Forecasting-Using-API.git
    cd Weather-Forecasting-Using-API
-````
+   ```
+
 
 2. **Install dependencies**
 
@@ -47,7 +48,7 @@ It features a clean and responsive UI, interactive map, and secure backend API h
    ```python
    API_KEYS = [
        "your_api_key_here"
-       # Add more keys if needed
+       # Add more keys for bypassing rate limit
    ]
    ```
 
@@ -104,3 +105,4 @@ See [OpenWeatherMap](https://openweathermap.org/) and [Leaflet/OpenStreetMap](ht
 ---
 
 💡 For questions or contributions → Feel free to open an **Issue** or **Pull Request**.
+
