@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <div class="weather-app">
+        <div class="search-container">
+            <input type="text" id="city-input" placeholder="Search city...">
+            <button id="search-btn" title="Search"><i class="fas fa-search"></i></button>
+            <button id="location-btn" title="Use my location"><i class="fas fa-location-arrow"></i></button>
+        </div>
+
+        <div class="weather-display">
+            <div class="weather-main">
+                <div class="location" id="location">-</div>
+                <div class="date" id="date">-</div>
+                <div class="temperature" id="temp">-</div>
+                <div class="conditions" id="conditions">-</div>
+            </div>
+            <div class="weather-icon">
+                <img src="" alt="Weather Icon" id="weather-icon">
+            </div>
+        </div>
+
+        <div class="weather-details">
+            <div class="weather-detail-cell">
+                <div class="weather-detail-label"><i class="fas fa-temperature-high"></i> Feels Like</div>
+                <div class="weather-detail-value" id="feels-like">-</div>
+                <div class="weather-detail-label">°C</div>
+            </div>
+            <div class="weather-detail-cell">
+                <div class="weather-detail-label"><i class="fas fa-tint"></i> Humidity</div>
+                <div class="weather-detail-value" id="humidity">-</div>
+                <div class="weather-detail-label">%</div>
+            </div>
+            <div class="weather-detail-cell">
+                <div class="weather-detail-label"><i class="fas fa-wind"></i> Wind</div>
+                <div class="weather-detail-value" id="wind">-</div>
+                <div class="weather-detail-label">km/h</div>
+            </div>
+        </div>
+
+        <div class="forecast" id="forecast"></div>
+
+        <div class="loading" id="loading">
+            <div class="loader"></div>
+            <p>Loading weather data...</p>
+        </div>
+
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
