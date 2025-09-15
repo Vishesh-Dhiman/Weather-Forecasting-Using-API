@@ -1,15 +1,18 @@
-from flask import Flask, render_template, request, jsonify
 
+from flask import Flask, render_template, request, jsonify
 import requests
 import random
+import os
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 
-# List your API keys here
-API_KEYS = [
-    "f9638f565fd5985e2b3b0e642d7d573e",
-    # Add more API keys as needed
-]
+# Load environment variables from .env file
+load_dotenv()
+
+# Get API keys from environment variable (comma-separated if multiple)
+API_KEYS = os.getenv("API_KEYS", "").split(",")
+API_KEYS = [k.strip() for k in API_KEYS if k.strip()]
 BASE_URL = "https://api.openweathermap.org/data/2.5"
 
 @app.route("/")
@@ -51,4 +54,5 @@ def get_weather():
     return jsonify({"current": current_data, "forecast": forecast_data})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Production mode: debug is False, consider using a WSGI server like Gunicorn or Waitress for deployment
+    app.run(host="0.0.0.0", port=5000, debug=False)
